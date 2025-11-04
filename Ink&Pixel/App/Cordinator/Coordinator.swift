@@ -19,7 +19,7 @@ final class Coordinator: CoordinatorProtocol {
     // MARK: - Functions
     func start() {
         if Auth.auth().currentUser?.uid != nil {
-            let vc = ViewController(coordinator: self)
+            let vc = TabBarViewBuilder.build(coordinator: self)
             navigationController?.setViewControllers([vc],
                                                      animated: true)
         } else {

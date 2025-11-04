@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		216D9BA92EBA68A8004D19AD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 216D9BA82EBA68A8004D19AD /* Kingfisher */; };
 		218908F52EA4EC220088B9CA /* FirebaseAI in Frameworks */ = {isa = PBXBuildFile; productRef = 218908F42EA4EC220088B9CA /* FirebaseAI */; };
 		218908F72EA4EC220088B9CA /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 218908F62EA4EC220088B9CA /* FirebaseAnalytics */; };
 		218908F92EA4EC220088B9CA /* FirebaseAnalyticsCore in Frameworks */ = {isa = PBXBuildFile; productRef = 218908F82EA4EC220088B9CA /* FirebaseAnalyticsCore */; };
@@ -74,6 +75,7 @@
 				218908F52EA4EC220088B9CA /* FirebaseAI in Frameworks */,
 				2189090B2EA4EC220088B9CA /* FirebaseFirestore in Frameworks */,
 				218909192EA4EC220088B9CA /* FirebaseMessaging in Frameworks */,
+				216D9BA92EBA68A8004D19AD /* Kingfisher in Frameworks */,
 				218909152EA4EC220088B9CA /* FirebaseInstallations in Frameworks */,
 				218909112EA4EC220088B9CA /* FirebaseFunctionsCombine-Community in Frameworks */,
 				218909012EA4EC220088B9CA /* FirebaseAuth in Frameworks */,
@@ -150,6 +152,7 @@
 				2189091C2EA4EC220088B9CA /* FirebaseRemoteConfig */,
 				2189091E2EA4EC220088B9CA /* FirebaseStorage */,
 				218909202EA4EC220088B9CA /* FirebaseStorageCombine-Community */,
+				216D9BA82EBA68A8004D19AD /* Kingfisher */,
 			);
 			productName = "Ink&Pixel";
 			productReference = 210BFC832E93F1C700CEE21E /* Ink&Pixel.app */;
@@ -181,6 +184,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				218908F32EA4EC220088B9CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				216D9BA72EBA68A8004D19AD /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 210BFC842E93F1C700CEE21E /* Products */;
@@ -226,7 +230,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -257,7 +261,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -418,6 +422,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		216D9BA72EBA68A8004D19AD /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.6.1;
+			};
+		};
 		218908F32EA4EC220088B9CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -429,6 +441,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		216D9BA82EBA68A8004D19AD /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 216D9BA72EBA68A8004D19AD /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		218908F42EA4EC220088B9CA /* FirebaseAI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 218908F32EA4EC220088B9CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
