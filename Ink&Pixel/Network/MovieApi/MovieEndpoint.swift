@@ -7,21 +7,15 @@
 
 import Foundation
 
-protocol MovieEndpointProtocol {
-    var baseUrl: String {get}
-    var path : String {get}
-    var method : HttpMethod {get}
-    var parameters : [URLQueryItem]? {get}
-    func request () -> URLRequest
-}
-
 enum MovieEndpoint {
     case getMovie(page: Int)
     case getMovieDetail(id: Int)
     case getMovieSearch(quary: String, page: Int)
+    case getMovieCredit(id: Int)
+    case getMovieVideos(id: Int)
 }
 
-extension MovieEndpoint: MovieEndpointProtocol {
+extension MovieEndpoint: EndpointProtocol {
     var baseUrl: String {
         return "https://api.themoviedb.org/"
     }
@@ -34,12 +28,20 @@ extension MovieEndpoint: MovieEndpointProtocol {
             return "/3/movie/\(id)"
         case .getMovieSearch:
             return "/3/search/movie"
+        case .getMovieCredit(let id):
+            return "/3/movie/\(id)/credits"
+        case .getMovieVideos(let id):
+            return "/3/movie/\(id)/videos"
         }
     }
     
     var method: HttpMethod {
         switch self {
-        case .getMovie, .getMovieDetail, .getMovieSearch:
+        case .getMovie,
+                .getMovieDetail,
+                .getMovieSearch,
+                .getMovieCredit,
+                .getMovieVideos:
             return .get
         }
     }
@@ -51,7 +53,7 @@ extension MovieEndpoint: MovieEndpointProtocol {
                     URLQueryItem(name: "language", value: Constants.languageForMovieApi),
                     URLQueryItem(name: "page", value:"\(page)")]
             
-        case .getMovieDetail:
+        case .getMovieDetail, .getMovieCredit, .getMovieVideos:
             return [URLQueryItem(name: "api_key", value: Constants.movieApiKey),
                     URLQueryItem(name: "language", value: Constants.languageForMovieApi)]
             
@@ -70,7 +72,6 @@ extension MovieEndpoint: MovieEndpointProtocol {
         
         var request = URLRequest(url: comp.url!)
         request.httpMethod = method.rawValue
-        request.timeoutInterval = 10
         return request
         
     }
